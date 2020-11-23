@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="cordova-plugin-netmera" version="0.0.1">
+    <name>NetmeraPushNotification</name>
+
+    <description>An Android Cordova plugin that allows users to send notification messages.</description>
+    <license>MIT</license>
+
+    <keywords>cordova,android,notification,message,alert</keywords>
+    <repo>https://github.com/ertuncs/cordova-plugin-netmera.git</repo>
+    <issue>https://github.com/ertuncs/cordova-plugin-netmera/issues</issue>
+
+    <engines>
+        <engine name="cordova" version=">=7.1.0"/>
+        <engine name="cordova-android" version=">=7.1.0"/>
+        <engine name="cordova-ios" version=">=4.5.0"/>
+    </engines>
+
+    <platform name="android">
+        <framework src="src/android/build.gradle" custom="true" type="gradleReference" />
+        <framework src="src/android/app.gradle" custom="true" type="gradleReference" />
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="NetmeraPlugin">
+                <param name="android-package" value="com.netmera"/>
+            </feature>
+        </config-file>
+        <edit-config file="AndroidManifest.xml" target="/manifest/application" mode="merge">
+            <application android:name="com.netmera.NGActivity" />
+        </edit-config>
+        <source-file src="src/android/NGActivity.java" target-dir="src/com/netmera/cordova/android/plugin" />
+    </platform>
+
+    <platform name="ios">
+        <podspec>
+            <config>
+                <source url="https://github.com/CocoaPods/Specs.git"/>
+            </config>
+            <pods>
+                <pod name="Netmera" />
+            </pods>
+        </podspec>
+
+        <config-file target="config.xml" parent="/*">
+            <feature name="NetmeraPlugin">
+                <param name="ios-package" value="NetmeraPlugin" />
+                <param name="onload" value="true" />
+            </feature>
+        </config-file>
+        <source-file src="src/ios/NetmeraPlugin.m" />
+        <source-file src="src/ios/NetmeraPlugin.h"/>
+    </platform>
+</plugin>

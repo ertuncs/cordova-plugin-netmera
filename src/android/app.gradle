@@ -1,0 +1,37 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion '26.0.1'
+    defaultConfig {
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        resValue "bool", "netmera_use_default_push_receiver", "false"
+        resValue "bool", "netmera_use_default_deeplink_action", "true"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    // Netmera
+    implementation 'com.netmera:netmera:3.6.8'
+    implementation 'com.google.firebase:firebase-core:16.0.8'
+    implementation 'com.google.firebase:firebase-messaging:17.3.4'
+    implementation 'com.google.android.gms:play-services-location:16.0.0'
+    implementation 'com.google.code.gson:gson:2.8.5'
+    // Netmera
+
+    implementation 'com.google.android.gms:play-services-location:PUT_LATEST_VERSION_HERE'
+
+}

@@ -1,0 +1,35 @@
+{
+  "name": "cordova-plugin-netmera",
+  "version": "0.0.1",
+  "description": "An Android Cordova plugin that allows users to send notification messages.",
+  "cordova": {
+    "id": "cordova-plugin-netmera",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ertuncs/cordova-plugin-netmera.git"
+  },
+  "keywords": [
+    "Netmera",
+    "Notification",
+    "Message",
+    "Alert",
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0.0"
+    }
+  ],
+  "author": "Ertunc Sakal <ertuncsakal@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ertuncs/cordova-plugin-netmera/issues"
+  },
+  "homepage": "https://github.com/ertuncs/cordova-plugin-netmera"
+}
